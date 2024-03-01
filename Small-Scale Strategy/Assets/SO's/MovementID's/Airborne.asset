@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c676e7f8d8acd6a408b8a2d76ca74c18, type: 3}
-  m_Name: Air
+  m_Name: Airborne
   m_EditorClassIdentifier: 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Unit : ScriptableObject
+public class UnitID : ScriptableObject
 {
     public MovementID MovementType;
     public WeaponID PrimaryDamageType;
@@ -9,8 +9,9 @@ public class Unit : ScriptableObject
     public float PrimaryWeaponDamage;
     public float SecondaryWeaponDamage;
     public int MoveRange;
-    public int PrimaryAmmo;
-    public int Fuel;
+    public int PrimaryAmmoTotal;
+    public int PrimaryAmmoCount;
+    public int FuelTotal;
+    public int FuelCount;
     public float Health;
-
 }

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8afad0d23bd5940999f9a63fd8ce77, type: 3}
   m_Name: Mountain
   m_EditorClassIdentifier: 
+  defence: 4

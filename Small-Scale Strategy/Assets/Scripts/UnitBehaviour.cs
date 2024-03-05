@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class UnitBehaviour : MonoBehaviour
@@ -5,6 +6,11 @@ public class UnitBehaviour : MonoBehaviour
 
     [SerializeField] private Animator UnitAnimator;
     private Vector3 targetPosition;
+
+    private void Awake()
+    {
+        targetPosition = transform.position;
+    }
 
     private void Update()
     {   
@@ -15,6 +21,9 @@ public class UnitBehaviour : MonoBehaviour
             Vector3 moveDirection = (targetPosition - transform.position).normalized;
             float moveSpeed = 4f;
             transform.position += moveDirection * moveSpeed * Time.deltaTime;
+
+            float rotateSpeed = 10f;
+            transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed);
             
             UnitAnimator.SetBool("IsWalking", true);
         }
@@ -23,13 +32,9 @@ public class UnitBehaviour : MonoBehaviour
             UnitAnimator.SetBool("IsWalking", false);
         }
         
-        if (Input.GetMouseButtonDown(0))
-        {
-            Move(MouseWorldBehaviour.GetPosition());
-        }
     }
 
-    private void Move(Vector3 targetPosition)
+    public void Move(Vector3 targetPosition)
     {
         this.targetPosition = targetPosition;
     }
